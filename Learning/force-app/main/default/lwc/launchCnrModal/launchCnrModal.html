@@ -1,0 +1,10 @@
+<template>
+    <lightning-button
+        label="Submit CNR"
+        title="Submit CNR"
+        onclick={handleOpen}
+        class="slds-m-around_medium">
+    </lightning-button>
+
+    <c-cnr-modal lwc:ref="modal" onsubmit={handleSubmit}></c-cnr-modal>
+</template>

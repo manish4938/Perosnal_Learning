@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Object Metadata Viewer">
+        <!-- Input for Object API Name -->
+        <div class="slds-m-around_medium">
+            <lightning-input
+                label="Enter Object API Name (e.g., Account)"
+                value={objectApiName}
+                onchange={handleObjectNameChange}
+            ></lightning-input>
+        </div>
+
+        <!-- Display Object Metadata -->
+        <template if:true={objectInfo}>
+            <div class="slds-m-around_medium">
+                <h2>Object: {objectInfo.label}</h2>
+                <p>API Name: {objectInfo.apiName}</p>
+                <p>Custom Object: {objectInfo.custom}</p>
+
+                <!-- Field Dropdown -->
+                <lightning-combobox
+                    label="Select a Field"
+                    value={selectedField}
+                    options={fieldOptions}
+                    onchange={handleFieldChange}
+                ></lightning-combobox>
+
+                <!-- Selected Field Details -->
+                <template if:true={selectedFieldDetails}>
+                    <div class="slds-box slds-m-top_medium">
+                        <p><strong>Field Label:</strong> {selectedFieldDetails.label}</p>
+                        <p><strong>API Name:</strong> {selectedFieldDetails.apiName}</p>
+                        <p><strong>Data Type:</strong> {selectedFieldDetails.dataType}</p>
+                        <p><strong>Required:</strong> {selectedFieldDetails.required}</p>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <!-- Error Handling -->
+        <template if:true={error}>
+            <div class="slds-text-color_error">
+                <p>Error: {error}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,6 @@
+/* In your component's CSS file (e.g., .css file) */
+.custom-textarea {
+    color: blue; /* This will apply text color to the text inside the textarea */
+    font-size: 16px; /* Optional: you can adjust the font size */
+	font-weight: bold;
+}

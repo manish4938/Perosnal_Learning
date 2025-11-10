@@ -1,0 +1,40 @@
+<apex:page controller="popup" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false" showHeader="false">
+     <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+         <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <apex:form >
+        <center>
+        <apex:commandButton value="Show Pop up" action="{!showPopup}" styleClass="cstm-btn btn-red margin-btn-top" rerender="popup"/>
+        </center>
+        
+    <apex:outputPanel id="popup">
+            <apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopUp}">
+              <center>Password has been reset sucessfully<br/><br/>
+                  <apex:commandButton value="Hide Pop up" action="{!closePopup}" styleClass="cstm-btn btn-red margin-btn-top" rerender="popup" /></center>
+            </apex:outputPanel>
+     </apex:outputPanel>
+ 
+    </apex:form>
+ 
+    <style type="text/css">
+       .customPopup{
+            background-color: white;
+            border-style: solid;
+            border-width: 2px;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            z-index: 9999;
+            /* These are the 3 css properties you will need to tweak so the pop 
+            up displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can also add 
+            the height property for a fixed size pop up.*/
+            width: 500px;
+            margin-left: -250px;
+            top:200px;
+        }
+        
+    </style>
+</apex:page>

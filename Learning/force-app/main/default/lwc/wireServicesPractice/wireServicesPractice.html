@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-11-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Wire Service Using Function">
+        <div class="slds-m-around_medium">
+            <template if:true={userDetails}>
+                <div>User Name is : {userDetails.Name.value}</div>
+                <div>User Email is : {userDetails.Email.value}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

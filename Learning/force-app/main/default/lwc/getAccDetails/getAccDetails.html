@@ -1,0 +1,12 @@
+<template>
+    <lightning-input label="Enter Your Name" value ={searchKey} onchnage={handleInputChange}></lightning-input>
+    <lightning-button label="Search" onclick ={handleSearch} variant="brand"></lightning-button>
+    <template if:true={accounts}>
+     <template for:each={accounts} for:item="account">
+      <p key={account.Id}>{account.Name} - {account.Phone} - {account.Email} - {account.BillingCity}</p>
+     </template>
+     <c-test-interview
+     message-from-parent ={messageFromParent} onsend ={sendDataToParent}></c-test-interview>
+     </template>
+     <h5>From Child !! {childData}</h5>
+</template>

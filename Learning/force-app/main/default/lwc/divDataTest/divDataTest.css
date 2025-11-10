@@ -1,0 +1,15 @@
+.prompt-textarea {
+    resize: none;
+    overflow: auto;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: black;
+    z-index: 2;
+    caret-color: black; /* Makes sure the cursor is visible */
+    font-size: 14px;
+}

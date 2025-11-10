@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-16-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Apex Call With Param">
+        <div class="slds-var-p-around_medium">
+        <lightning-combobox
+        name="Type"
+        label="Selected Your Accout Types"
+        options={typeOption}
+        value={selectedType}
+        onchange={getAccountTypeHandler}
+         >
+        </lightning-combobox> </div>
+        <template if:true={filteredAccounts.data}>
+            <template for:each={filteredAccounts.data} for:item="accountType">
+                <div class="slds-box slds-box_xx-small" key={accountType.Id}>
+                  <p><strong> Name :</strong> {accountType.Name} </p>
+                  <p><strong> Type :</strong> {accountType.Type} </p>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>

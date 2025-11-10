@@ -1,0 +1,17 @@
+.workspace {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.placeholder-section {
+    margin-top: 20px;
+}
+
+.output-section {
+    margin-top: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}

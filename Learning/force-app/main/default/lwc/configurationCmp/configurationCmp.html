@@ -1,0 +1,91 @@
+<template>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Prompt Builder</h1>
+            <div class="header-buttons">
+                <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+                <lightning-button-menu label="Save As" variant="neutral">
+                    <lightning-menu-item label="Option 1"></lightning-menu-item>
+                    <lightning-menu-item label="Option 2"></lightning-menu-item>
+                </lightning-button-menu>
+                <lightning-button label="Deactivate" variant="destructive" onclick={handleDeactivate}></lightning-button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Prompt Template Workspace Section -->
+            <div class="workspace">
+                <h2>Prompt Template Workspace</h2>
+                <div class="input-group">
+                    <lightning-input
+                        label="Resource"
+                        placeholder="Search or select a resource..."
+                        type="text"
+                    ></lightning-input>
+                    <lightning-input
+                        label="Object Field"
+                        placeholder="Agentforce Order > Description"
+                        type="text"
+                    ></lightning-input>
+                </div>
+                <lightning-textarea
+                    label="Enter your template..."
+                    placeholder="Enter your template here..."
+                ></lightning-textarea>
+                <div class="metadata">
+                    <p>
+                        Order Name: <a href="#">Input:Agentforce_Order__c.Name</a>
+                    </p>
+                    <p>
+                        Order Status: <a href="#">Input:Agentforce_Order__c.Order_Status__c</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Configuration Section -->
+            <div class="configuration">
+                <h2>Configuration</h2>
+                <lightning-combobox
+                    label="Model Type"
+                    placeholder="Select a model type"
+                    options={modelTypeOptions}
+                ></lightning-combobox>
+                <lightning-combobox
+                    label="Models"
+                    placeholder="Select a model"
+                    options={modelOptions}
+                ></lightning-combobox>
+            </div>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview">
+            <h2>Preview</h2>
+            <div class="row">
+                <lightning-input
+                    label="Resolution"
+                    type="toggle"
+                    onchange={handleToggle}
+                ></lightning-input>
+                <lightning-input
+                    label="Related Record"
+                    placeholder="Search Agentforce Orders"
+                    type="text"
+                ></lightning-input>
+                <lightning-button label="Preview" variant="brand" onclick={handlePreview}></lightning-button>
+            </div>
+            <div class="row">
+                <div>
+                    <lightning-textarea label="Resolution" placeholder="Enabled"></lightning-textarea>
+                </div>
+                <div>
+                    <lightning-textarea
+                        label="Response"
+                        placeholder="No response available yet. Preview will appear here after generation."
+                    ></lightning-textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

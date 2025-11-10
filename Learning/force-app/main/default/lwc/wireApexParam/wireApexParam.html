@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-09-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Apex And LWC Interactions By Passing Parameters">
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+            name="Industry"
+            label="Choose Your Industry"
+            value={selectedIndustry}
+            options={industryOptions}
+            onchange={handleIndustryChoice}
+            >
+
+            </lightning-combobox>
+            <template if:true={filteredAccounts.data}>
+               <template for:each={filteredAccounts.data}  for:item="account">
+                   <div class="slds-box slds-box_xx-small" key={account.Id}>
+                   <p> <strong> Name:- </strong> {account.Name} </p>
+                   <p><strong> Industry:-</strong>{account.Industry}</p>
+                </div>
+               </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,72 @@
+<template>
+    <lightning-card>
+    <div class="button-bar">
+        <lightning-button label="Activate" variant="neutral" onclick={handleActivate}></lightning-button>
+        <lightning-button-menu
+            label="Save As"
+            alternative-text="Save As"
+            icon-name="utility:down"
+            variant="brand">
+            <lightning-menu-item label="Option 1" value="option1"></lightning-menu-item>
+            <lightning-menu-item label="Option 2" value="option2"></lightning-menu-item>
+        </lightning-button-menu>
+        <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+    </div>
+    </lightning-card>
+
+    <div class="responsive-card">
+    <lightning-card>
+       <div class="workspace-container" style="margin-top: -14px;">
+            <span>
+                Prompt Template Workspace
+                <lightning-icon icon-name="utility:info" size="xx-small" alternative-text="Info"></lightning-icon>
+            </span>
+        </div>
+           
+        <div class="flex-container">
+            <span style="width: 359px;margin-left: 320px;margin-top: -108px;font-size: 13px;">Resources
+            <lightning-icon icon-name="utility:info" size="xx-small" alternative-text="Info"></lightning-icon>
+            </span>
+        </div>
+        <div class="flex-container" style="margin-left: 320px;margin-top: -63px;">
+             <lightning-input
+                    style="width: 293px;"
+                    type="search"
+                    placeholder="Search for or select a resource to insert"
+                    onchange={handleResourceChange}
+                    icon-name="utility:search">
+              </lightning-input>
+        </div>
+        
+        <div class="flex-container">
+            <span style="width: 359px;margin-left: 640px;margin-top: -80px;font-size: 13px;">Object Field
+            </span>
+        </div>
+        
+        <div class="flex-container" style="margin-left: 640px;margin-top: -53px;">
+             <lightning-input
+                    style="width: 293px;"
+                    type=""
+                    placeholder=" "
+                    onchange={handleResourceChange}
+                    icon-name="utility:search">
+              </lightning-input>
+        </div>
+
+        <!-- Text Area Section -->
+        <div class="text-area-container">
+            <lightning-textarea
+                name="promptTextArea"
+                placeholder="Enter your prompt here..."
+                onchange={handleTextareaChange}>
+            </lightning-textarea>
+        </div>
+     
+    </lightning-card>
+    </div>
+    <div class="responsive-card">
+    <lightning-card>
+         <span class="workspace-container">Preview</span>
+    </lightning-card>
+    </div>
+</template>

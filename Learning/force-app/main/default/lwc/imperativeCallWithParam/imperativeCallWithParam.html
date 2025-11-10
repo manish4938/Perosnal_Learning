@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-16-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Apex Imperative Call">
+        <lightning-input
+        type="Search"
+        onchange={searchHandler}
+        label="Search Account"
+        value={searchKey}>
+        </lightning-input>
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="account">
+              <div class="slds-box slds-box_xx-small" key={account.Id}>
+                <p><strong>Name : </strong>{account.Name}</p>
+                <p><strong>Type : </strong>{account.Type}</p>
+              </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>

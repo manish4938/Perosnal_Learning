@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-17-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>  
+  <lightning-card title="Calculator">
+     <div class="slds-m-around_medium">
+     <lightning-input type="number" name="input1" label="Number 1" onchange={handleNumberOeChange} value={firstNumber}></lightning-input>  
+     <lightning-input type="number" name="input2" label="Number 2" onchange={handleNumberTwoChange} value={secondNumber}></lightning-input>  
+      <b>Output value is : </b>  
+      <P>{resultValue}</p>  
+     <lightning-button label="Addition" onclick={addition}> </lightning-button>  
+     <lightning-button label="Multification" onclick={multification}> </lightning-button>  
+     <lightning-button label="Subtraction" onclick={subtraction}> </lightning-button>  
+     <lightning-button label="Divison" onclick={division}> </lightning-button>  
+    </div>
+    </lightning-card>
+ </template>

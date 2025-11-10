@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-10-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Lightening Record Form">
+        <lightning-record-form
+         object-api-name={ObjectName}
+         fields={fieldList} columns="2"
+         onsuccess={successHandler}></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Lightening Edit Mode Record Form">
+        <lightning-record-form
+         object-api-name={ObjectName}
+         fields={fieldList} columns="2"
+         record-id="0015g00001KkZGTAA3"></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Lightening Read Only Mode Record Form">
+        <lightning-record-form
+         object-api-name={ObjectName}
+         fields={fieldList}
+         columns="2"
+         record-id="0015g00001KkZGTAA3"></lightning-record-form>
+    </lightning-card>
+
+
+</template>

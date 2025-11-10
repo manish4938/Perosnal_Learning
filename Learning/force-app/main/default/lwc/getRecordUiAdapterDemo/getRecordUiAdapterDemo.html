@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-06-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get Record Ui Adapters Demo">
+        <div class="slds-p-around_medium">
+          <template for:each={forFields} for:item="field">
+            <div key={field.label}>
+               <p><strong>{field.label}</strong></p>
+               <p>{field.value}</p>
+            </div>
+          </template>
+        </div>
+    </lightning-card>
+</template>

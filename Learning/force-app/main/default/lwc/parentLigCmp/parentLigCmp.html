@@ -1,0 +1,6 @@
+<template>
+<c-child-lig-cmp onmessage={handleDataFromChild}></c-child-lig-cmp>
+<template if:true={childMessage}>
+<p>{childMessage}</p>
+</template>
+</template>

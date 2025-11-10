@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-17-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="calculator">
+        <input type="text" class="result" value={result} disabled />
+        <div class="buttons">
+            <button onclick={handleNumberClick} value="1">1</button>
+            <button onclick={handleNumberClick} value="2">2</button>
+            <button onclick={handleNumberClick} value="3">3</button>
+            <button onclick={handleOperationClick} value="+">+</button>
+            <button onclick={handleNumberClick} value="4">4</button>
+            <button onclick={handleNumberClick} value="5">5</button>
+            <button onclick={handleNumberClick} value="6">6</button>
+            <button onclick={handleOperationClick} value="-">-</button>
+            <button onclick={handleNumberClick} value="7">7</button>
+            <button onclick={handleNumberClick} value="8">8</button>
+            <button onclick={handleNumberClick} value="9">9</button>
+            <button onclick={handleNumberClick} value=".">.</button>
+            <button onclick={handleOperationClick} value="*">*</button>
+            <button onclick={handleClearClick}>C</button>
+            <button onclick={handleNumberClick} value="0">0</button>
+            <button onclick={handleEqualsClick}>=</button>
+            <button onclick={handleOperationClick} value="/">/</button>
+        </div>
+    </div>
+</template>

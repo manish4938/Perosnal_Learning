@@ -1,0 +1,33 @@
+.button-bar {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-end; /* Move the buttons to the right */
+    gap: 0.5rem; /* Add space between buttons */
+    margin: 1rem; /* Optional: Add some margin to the container */
+}
+
+/* */
+.workspace-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    font-weight: bold; /* Makes the text bold */
+	font-size: 16px;
+	margin: 14px;
+}
+.flex-container {
+    display: flex;
+    align-items: center; /* Align vertically in the row */
+    gap: 10px; /* Optional spacing between spans */
+}
+
+.span-text {
+    font-size: 16px; /* Customize as needed */
+}
+.responsive-card {
+    width: 945px; /* The card takes up 80% of the parent container */
+}
+.text-area-container{
+    width: 920px;
+    margin-left: 15px
+
+}

@@ -1,0 +1,50 @@
+<aura:component >
+	 <span class="tag">&lt;aura:component</span><span class="attribute"> implements=</span><span class="string">"force:appHostable"</span><span class="attribute"> controller=</span><span class="string">"ContactController"</span>&gt;
+    &lt;!-- Handle component initialization <span class="keyword">in</span> a client-side controller --&gt;
+    <span class="tag">&lt;aura:handler</span><span class="attribute"> name=</span><span class="string">"init"</span><span class="attribute"> value=</span><span class="string">"{!this}"</span><span class="attribute"> action=</span><span class="string">"{!c.doInit}"</span>/&gt;
+    
+    &lt;!-- Dynamically load the list of contacts --&gt;
+    <span class="tag">&lt;aura:attribute</span><span class="attribute"> name=</span><span class="string">"contacts"</span><span class="attribute"> type=</span><span class="string">"Contact[]"</span>/&gt;
+    <span class="tag">&lt;aura:attribute</span><span class="attribute"> name=</span><span class="string">"contactList"</span><span class="attribute"> type=</span><span class="string">"Contact[]"</span>/&gt;
+    <span class="tag">&lt;aura:attribute</span><span class="attribute"> name=</span><span class="string">"totalContacts"</span><span class="attribute"> type=</span><span class="string">"Integer"</span>/&gt;
+    
+    &lt;!-- Page header <span class="keyword">with</span> a counter that displays total number of contacts --&gt;
+    <span class="tag">&lt;div</span><span class="attribute"> class=</span><span class="string">"slds-page-header slds-page-header_object-home"</span>&gt;
+        <span class="tag">&lt;lightning:layout</span>&gt;
+            <span class="tag">&lt;lightning:layoutItem</span>&gt;
+                <span class="tag">&lt;lightning:icon</span><span class="attribute"> iconName=</span><span class="string">"standard:contact"</span> /&gt;
+            <span class="tag">&lt;/lightning:layoutItem</span>&gt;
+            <span class="tag">&lt;lightning:layoutItem</span><span class="attribute"> class=</span><span class="string">"slds-m-left_small"</span>&gt;
+                <span class="tag">&lt;p</span><span class="attribute"> class=</span><span class="string">"slds-text-title_caps slds-line-height_reset"</span>&gt;Contacts<span class="tag">&lt;/p</span>&gt;
+                <span class="tag">&lt;h1</span><span class="attribute"> class=</span><span class="string">"slds-page-header__title slds-p-right_x-small"</span>&gt;Contact Viewer<span class="tag">&lt;/h1</span>&gt;
+            <span class="tag">&lt;/lightning:layoutItem</span>&gt;
+        <span class="tag">&lt;/lightning:layout</span>&gt;
+    
+        <span class="tag">&lt;lightning:layout</span>&gt;
+            <span class="tag">&lt;lightning:layoutItem</span>&gt;
+                <span class="tag">&lt;p</span><span class="attribute"> class=</span><span class="string">"slds-text-body_small"</span>&gt;{!v.totalContacts} Contacts • View Contacts Based on Lead Sources<span class="tag">&lt;/p</span>&gt;
+            <span class="tag">&lt;/lightning:layoutItem</span>&gt;
+        <span class="tag">&lt;/lightning:layout</span>&gt;
+    <span class="tag">&lt;/div</span>&gt;
+    
+    &lt;!-- Body <span class="keyword">with</span> dropdown menu and list of contacts --&gt;
+    <span class="tag">&lt;lightning:layout</span>&gt;
+        <span class="tag">&lt;lightning:layoutItem</span><span class="attribute"> padding=</span><span class="string">"horizontal-medium"</span> &gt;
+            &lt;!-- Create a dropdown menu <span class="keyword">with</span> options --&gt;
+            <span class="tag">&lt;lightning:select</span><span class="attribute"> aura:id=</span><span class="string">"select"</span><span class="attribute"> label=</span><span class="string">"Lead Source"</span><span class="attribute"> name=</span><span class="string">"source"</span> 
+                             <span class="attribute"> onchange=</span><span class="string">"{!c.handleSelect}"</span><span class="attribute"> class=</span><span class="string">"slds-m-bottom_medium"</span>&gt;
+                <span class="tag">&lt;option</span><span class="attribute"> value=</span><span class="string">""</span>&gt;-- Select a Lead Source --<span class="tag">&lt;/option</span>&gt;
+                <span class="tag">&lt;option</span><span class="attribute"> value=</span><span class="string">"Referral"</span><span class="attribute"> text=</span><span class="string">"Referral"</span>/&gt;
+                <span class="tag">&lt;option</span><span class="attribute"> value=</span><span class="string">"Social Media"</span><span class="attribute"> text=</span><span class="string">"Social Media"</span>/&gt;
+                <span class="tag">&lt;option</span><span class="attribute"> value=</span><span class="string">"All"</span><span class="attribute"> text=</span><span class="string">"All"</span>/&gt;
+            <span class="tag">&lt;/lightning:select</span>&gt;
+    
+            &lt;!-- Iterate over the list of contacts and display them --&gt;
+            <span class="tag">&lt;aura:iteration</span><span class="attribute"> var=</span><span class="string">"contact"</span><span class="attribute"> items=</span><span class="string">"{!v.contacts}"</span>&gt;
+                &lt;!-- If you’re using a namespace, replace <span class="keyword">with</span> myNamespace:contacts--&gt;
+                <span class="tag">&lt;c:contacts</span><span class="attribute"> contact=</span><span class="string">"{!contact}"</span>/&gt;
+            <span class="tag">&lt;/aura:iteration</span>&gt;
+        <span class="tag">&lt;/lightning:layoutItem</span>&gt;
+    <span class="tag">&lt;/lightning:layout</span>&gt;
+<span class="tag">&lt;/aura:component</span>&gt; 
+</aura:component>

@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-05-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Edit Form Only">
+        <lightning-record-edit-form
+            object-api-name={objectname}
+            record-id="0035g00000yEu1FAAS">
+           
+            <lightning-messages></lightning-messages>
+         <lightning-input-field field-name={fieldSet.accountField}></lightning-input-field>
+        <lightning-input-field field-name={fieldSet.nameField}></lightning-input-field>
+        <lightning-input-field field-name={fieldSet.titleField}></lightning-input-field>
+        <lightning-input-field field-name={fieldSet.phoneField}></lightning-input-field>
+        <label class="slds-p-left_x-small">Enter Your Email</label>
+        <lightning-input-field variant="label-hidden" field-name={fieldSet.emailField}></lightning-input-field>
+        <lightning-button class="slds-m-around_xx-small" label="Cancel" onclick={handlerReset}></lightning-button>
+        <lightning-button variant="brand" type="submit" class="slds-m-around_xx-small" label="Save"></lightning-button>
+        
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

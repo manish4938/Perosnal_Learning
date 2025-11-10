@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-17-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Child to parent communication">
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="Show Modal" 
+            onclick={clickHandler}></lightning-button>
+
+            <template if:true={showModal}>
+                <c-parent2-comp  onclose={closeHandler}>
+                    
+                </c-parent2-comp> 
+               
+                
+            </template>
+           
+        </div>
+    </lightning-card>
+</template>

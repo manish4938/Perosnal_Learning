@@ -1,0 +1,27 @@
+<apex:page >
+<apex:form >
+  <apex:pageBlock title="First Page Block">
+  <apex:pageBlockSection title="First Section">
+  <apex:pageBlockSectionItem >Java</apex:pageBlockSectionItem>
+   <apex:pageBlockSectionItem >J2EE</apex:pageBlockSectionItem>
+   <apex:pageBlockSectionItem >Framework</apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >Web Tech</apex:pageBlockSectionItem>
+  </apex:pageBlockSection>
+   <apex:pageBlockSection title="Second Section">
+   <apex:pageBlockSectionItem >Python</apex:pageBlockSectionItem>
+   <apex:pageBlockSectionItem >Djano</apex:pageBlockSectionItem>
+   <apex:pageBlockSectionItem >SQL</apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >Web Tech</apex:pageBlockSectionItem>
+  </apex:pageBlockSection>
+ 
+  
+
+  <apex:pageblockButtons >
+  
+<apex:commandButton value="Save"/>
+<apex:commandButton value="Close"/>
+</apex:pageblockButtons>
+  </apex:pageBlock>
+  </apex:form>
+   
+</apex:page>

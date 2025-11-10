@@ -1,0 +1,36 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-06-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get Picklist Value By Record Type">
+       <div class="slds-p-around_medium"></div>
+       <template if:true={ratingOption}>
+           <lightning-combobox
+           name="rating"
+           label="Rating"
+           value={selectedRating}
+           placeholder="Select Rating"
+           options={ratingOption}
+           onchange={handleChange}
+           ></lightning-combobox>
+           <p>Rating :- {selectedRating} </p>
+        </template>
+        
+        <template if:true={industryOption}>
+           <lightning-combobox
+           name="industry"
+           label="Industry"
+           value={selectedIndustry}
+           placeholder="Select Industry"
+           options={industryOption}
+           onchange={handleChange}
+           ></lightning-combobox>
+         <p>Industry :- {selectedIndustry} </p>
+        </template>
+    </lightning-card>
+    
+</template>

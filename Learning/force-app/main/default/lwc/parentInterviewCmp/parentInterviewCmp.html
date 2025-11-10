@@ -1,0 +1,6 @@
+<template>
+  <lightning-input onchange={changeHandler}></lightning-input>
+  <p> Message From Child : {messageFromChild}</p>
+  <c-child-interview-cmp
+  onsendmessage ={handleMessageFromChild}></c-child-interview-cmp>
+</template>

@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-29-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Parent To Chlid">
+    <lightning-button
+     variant="brand" label="Show Model" onclick={showModelHandler}></lightning-button>
+     <template if:true={showModel}>
+      <c-child2-parent-modal
+       onclose={closePopup}>
+      </c-child2-parent-modal>
+    </template>
+    </lightning-card>
+   
+   
+    
+</template>

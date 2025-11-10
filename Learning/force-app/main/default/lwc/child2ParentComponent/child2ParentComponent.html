@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-29-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Child To Parent Communication">
+        <div class="slds-m-around_medium" >
+         <lightning-button label="Show Modal" 
+         onclick={modalHandler}>
+        </lightning-button>
+         <h1>{msg}</h1>
+        <template if:true={showModal}>
+        
+        </template>
+    </div>
+    </lightning-card>
+        
+</template>

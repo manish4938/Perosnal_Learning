@@ -1,0 +1,36 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-26-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+
+<template>
+    <c-child-l-l
+    title="Parent To Child Communication Primitive Primitive And Complex Data"
+    number=100>
+    </c-child-l-l>
+    <div class="slds-m-bottom_medium"></div>
+
+    <lightning-card title="Call Child On Action">
+      <div class="slds-m-around_medium">
+        <lightning-input type="number"
+        label="Enter Percentage"
+        value={percentage}
+        onkeyup={percHandler}></lightning-input>
+      </div>
+      <c-call-child-on-action
+      percentage={percentage}></c-call-child-on-action>
+    </lightning-card>
+  
+    <lightning-card title="Slider">
+      <div class="slds-m-around_medium">  
+      <c-test-slider>
+      </c-test-slider>
+      <lightning-button variant="brand" label="reset" onchange={handleClick}></lightning-button>
+     
+
+      </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,62 @@
+<template>
+   <lightning-card title="Dynamic Display">
+        <lightning-combobox
+            label="Select Type"
+            value={selectedValue}
+            placeholder="Select an option"
+            options={options}
+            onchange={handleChange}>
+        </lightning-combobox>
+
+        <template if:true={isApex}>
+            <lightning-combobox
+                label="Select Apex Class"
+                options={apexClassOptions}
+                value={selectedApexClass}
+                onchange={handleApexClassChange}>
+            </lightning-combobox>
+        </template>
+
+        <template if:true={isFlow}>
+            <lightning-combobox
+                label="Select Flow"
+                options={flowOptions}
+                value={selectedFlow}
+                onchange={handleFlowChange}>
+            </lightning-combobox>
+        </template>
+
+        <template if:true={isObject}>
+            <template if:true={isObjectSelected}>
+              <lightning-combobox
+                label="Select Objects"
+                options={objectOptions}
+                value={selectedObject}
+                onchange={handleObjectChange}>
+             </lightning-combobox>
+             <template if:true={isFieldSelectionVisible}>
+             <lightning-combobox
+                label="Select Fields"
+                options={fieldOptions}
+                value={selectedField}
+                onchange={handleFieldChange}>
+             </lightning-combobox>
+            </template>
+            </template>
+            <template if:true={isFinalSelectionVisible}>
+                <lightning-input label="Selected Object and RelatedField" value={formattedSelection} readonly>{formattedSelection}</lightning-input>
+            </template>
+           
+    </template>
+    
+    </lightning-card>
+
+    <lightning-textarea
+        label="Selected Resource"
+        value={combinedResourceData}
+        oninput={updateTextareaValue}
+        onchange ={userData}
+        >
+    </lightning-textarea>
+    <p>{selectedResource} ..............{selectedResourceWithInput}</p>
+</template>

@@ -1,0 +1,7 @@
+<apex:page id="thePage">
+  <apex:tabPanel switchType="client">
+  <apex:tab label="Home" name="home" id="homeOne">Spiders is the world’s ace Java development training organization with an aim to bridge the gap between the demands of the industry and the curriculum of educational institutions. With centers across the Globe, the institute is a platform where young minds are given the opportunity to build successful careers</apex:tab>
+ <apex:tab label="Student" name="student" id="studentOne"> P.Vivek Nischal attended Java Training "Jspiders is one of the best institute,for learning the "java " course.The entire jspiders family is to supportive,they will help us in each and every matter,i would like to thank each and every jspider family member.</apex:tab>
+  
+  </apex:tabPanel>
+</apex:page>

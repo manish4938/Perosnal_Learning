@@ -1,0 +1,30 @@
+<template>
+    
+ <lightning-card  title="Rendering In LWC">
+    <div class="slds-var-m-around_medium">
+ <lightning-button 
+     variant="brand" 
+     label="Show Value" 
+     title="Show Value"
+     onclick={handleClick} 
+     class="slds-m-left_x-small">
+ </lightning-button>
+
+ <template if:true = "{isVisible}">
+        <div>Zero To Hero In LWC</div>
+ </template>
+
+ <lightning-input 
+     type="text"
+     label="Type hello to see the data"
+     onkeyup= "{changeHandler}">   
+</lightning-input>
+
+<template lwc:if = "{helloMethod}">
+    <div>Great!! You have typed hello correctly</div>
+</template>
+
+
+</div>
+ </lightning-card>
+</template>

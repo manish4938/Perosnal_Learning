@@ -1,0 +1,46 @@
+<template>
+    <template if:true={isOpen}>
+        <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open custom-modal">
+            <div class="custom-modal-container">
+                <!-- Modal Header -->
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">CNR: Clarification/Notification Request Form</h2>
+                    <button class="slds-button slds-modal__close" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                    </button>
+                </header>
+
+                <!-- Modal Body -->
+                <div class="slds-modal__content custom-modal-content">
+                    <lightning-combobox
+                        name="CNR Type"
+                        label="CNR Type Selection"
+                        placeholder="-- Select CNR Type --"
+                        options={cnrOptions}
+                        value={selectedCnr}
+                        onchange={handleCnrChange}>
+                    </lightning-combobox>
+                    <lightning-input
+                        type="text"
+                        label="Type"
+                        value={typeValue}
+                        onchange={handleTypeChange}>
+                    </lightning-input>
+                    <lightning-input
+                        type="tel"
+                        label="Phone"
+                        value={phoneValue}
+                        onchange={handlePhoneChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Modal Footer -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={handleSubmit}>Submit</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

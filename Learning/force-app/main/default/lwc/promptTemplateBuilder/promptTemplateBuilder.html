@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Prompt Template Builder" icon-name="utility:snippet">
+        <template if:true={templates}>
+            <template for:each={templates} for:item="template">
+                <div key={template.Id} class="slds-box slds-m-bottom_small">
+                    <lightning-input
+                        label="Template Name"
+                        value={template.Name}
+                        data-id={template.Id}
+                        onchange={handleNameChange}
+                    ></lightning-input>
+                    <lightning-textarea
+                        label="Template Content"
+                        placeholder="Use placeholders like {variable_name}"
+                        value={template.Template_Content__c}
+                        data-id={template.Id}
+                        onchange={handleContentChange}
+                    ></lightning-textarea>
+                    <lightning-textarea
+                        label="Description"
+                        value={template.Description__c}
+                        data-id={template.Id}
+                        onchange={handleDescriptionChange}
+                    ></lightning-textarea>
+                    <lightning-button
+                        label="Save"
+                        variant="brand"
+                        data-id={template.Id}
+                        onclick={saveTemplate}
+                        class="slds-m-top_small"
+                    ></lightning-button>
+                </div>
+            </template>
+        </template>
+        <lightning-button
+            label="Add New Template"
+            onclick={addNewTemplate}
+            class="slds-m-top_medium"
+        ></lightning-button>
+        <hr />
+        <h3>Preview Template</h3>
+        <lightning-textarea
+            label="Variables (JSON format)"
+           
+            onchange={handleVariablesChange}
+        ></lightning-textarea>
+        <lightning-textarea
+            label="Rendered Output"
+            readonly
+            value={renderedOutput}
+        ></lightning-textarea>
+    </lightning-card>
+</template>

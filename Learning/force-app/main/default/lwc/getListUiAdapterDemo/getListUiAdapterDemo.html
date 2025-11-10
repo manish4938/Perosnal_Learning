@@ -1,0 +1,42 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-06-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get List Ui Adapter Demo">
+        <div class="slds-p-around_medium">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+             
+             <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Title</th>
+                </tr>
+             </thead>
+              <tbody>
+                <template for:each={contacts} for:item="contact">
+                    <tr key={contact.fields.Id.value}>
+                        <th>{contact.fields.Name.value}</th>
+                        <th>{contact.fields.Email.value}</th>
+                        <th>{contact.fields.Title.value}</th>
+                    </tr>
+                </template>
+              </tbody>
+            </table>
+        </div>
+         <div class="slds-grid">
+            <div class="slds-p-around_medium">
+                <lightning-button label="Previous" onclick={previousPage}></lightning-button>
+            </div>
+
+            <div class="slds-p-around_medium">
+                <lightning-button label="Next" onclick={nextPage}></lightning-button>
+            </div>
+
+         </div>
+    </lightning-card>
+</template>

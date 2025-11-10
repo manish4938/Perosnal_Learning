@@ -1,0 +1,18 @@
+<aura:component >
+    <aura:attribute name='num1' type='integer' description='For First Number'/>
+    <aura:attribute name='num2' type='integer' description='For Second Number'/>
+     <aura:attribute name='output' type='integer' description='Output'/>
+    
+    <lightning:input type='number' value="{!v.num1}" label='Enter The First Number' required="true"/> 
+    <lightning:input type='number' value="{!v.num2}" label='Enter The Second Number' required="true"/> 
+    
+    The Output is:-{!v.output} <br/>
+    
+    <lightning:button value='Component Methods' label='Add'       onClick="{!c.doAdd}"/>
+    <lightning:button value='Component Methods' label='Substract' onClick="{!c.doSub}"/>
+    <lightning:button value='Component Methods' label='Divide'    onClick="{!c.doDiv}"/>
+    <lightning:button  value='Component Methods' label='Multiply' onClick="{!c.doMul}"/>
+
+
+                  
+</aura:component>

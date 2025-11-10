@@ -1,0 +1,37 @@
+<template>
+    <div class="workspace">
+        <h1>Prompt Template Workspace</h1>
+
+        <!-- Input for Template -->
+        <lightning-textarea
+            label="Template"
+            placeholder="Enter your template (e.g., 'Hello, {name}!')"
+            value={template}
+            onchange={handleTemplateChange}>
+        </lightning-textarea>
+
+        <!-- Dynamic Fields for Placeholders -->
+        <template if:true={placeholders.length}>
+            <div class="placeholder-section">
+                <h2>Fill Placeholders</h2>
+                <template for:each={placeholders} for:item="placeholder">
+                    <lightning-input
+                        key={placeholder}
+                        data-placeholder={placeholder}
+                        label={placeholder}
+                        onchange={handlePlaceholderChange}>
+                    </lightning-input>
+                </template>
+            </div>
+        </template>
+
+        <!-- Generated Prompt -->
+        <div class="output-section">
+            <h2>Generated Prompt</h2>
+            <lightning-textarea
+                readonly
+                value={generatedPrompt}>
+            </lightning-textarea>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-11-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get Object Info Api">
+        <div class="slds-m-around_medium">
+            <div>SingleObject :- {singleObject}</div>
+        </div>
+      
+    </lightning-card>
+
+    <lightning-card title="Get Object Infos Api">
+        <div class="slds-m-around_medium">
+            <template if:true={multipleObject}>
+        <template for:each={multipleObject.results} for:item="obj">
+            <div key={obj.result.apiName}>
+                <div>Obj Api Name - {obj.result.apiName}</div>
+                <div>Default Record Type - {obj.result.defaultRecordTypeId}</div>
+            </div>
+        </template>
+    </template>
+    </div>
+     </lightning-card>
+</template>

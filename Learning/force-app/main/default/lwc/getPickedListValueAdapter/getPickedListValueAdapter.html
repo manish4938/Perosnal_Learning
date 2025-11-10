@@ -1,0 +1,35 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-06-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get First Picklist Value">
+        <div class="slds-var-p-around_medium">
+            <lightning-combobox
+            name="Industry"
+            label="Industry"
+            value={selectedIndustry}
+            placeholder="Select Indsutry"
+            options={indistryOptions}
+            onchange={handleChange} ></lightning-combobox>
+        </div>
+        <p>Selected Industry :- {selectedIndustry}</p>
+    </lightning-card>
+
+    <lightning-card title="Get Second Picklist Value">
+        <div class="slds-var-p-around_medium">
+            <lightning-combobox
+            name="Type"
+            label="Type"
+            value={selectedTypes}
+            placeholder="Select Type"
+            options={typeOptions}
+            onchange={typeHandleChange} ></lightning-combobox>
+        </div>
+        <p>Selected Type :- {selectedTypes}</p>
+    </lightning-card>
+
+</template>

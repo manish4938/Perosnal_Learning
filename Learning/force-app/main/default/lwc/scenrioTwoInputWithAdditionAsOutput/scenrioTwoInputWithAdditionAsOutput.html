@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-16-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Addition Component">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Input 1" type="number" step="any" value={input1} onchange={handleInputChange}></lightning-input>
+            <lightning-input label="Input 2" type="number" step="any" value={input2} onchange={handleInputChange}></lightning-input>
+            <lightning-button label="Calculate Sum" onclick={calculateSum}></lightning-button>
+        </div>
+        <div class="slds-p-around_medium">
+            <p>Result: {result}</p>
+        </div>
+    </lightning-card>
+</template>

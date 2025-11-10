@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-17-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Calculator APP">
+        <div class="slds-m-around_medium slds-p-around_medium">
+            <lightning-input name="Number 1" type="number" label="Enter Number - 1" value={number1} onchange={number1Handler}></lightning-input>
+            <lightning-input name="Number 2" type="number" label="Enter Number - 2" value={number2} onchange={number2Handler}></lightning-input>
+
+            <p><strong>The Result is:- </strong>{result}</p>
+            <lightning-button variant="brand" label="Add" onclick={addOfNumber}></lightning-button>
+            <lightning-button variant="brand" label="Substract" onclick={subOfNumber}></lightning-button>
+            <lightning-button variant="brand" label="Multiply" onclick={mulOfNumber}></lightning-button>
+            <lightning-button variant="brand" label="Divide" onclick={divOfNumber}></lightning-button>
+            <lightning-button variant="brand" label="Clear" onclick={clearInput}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

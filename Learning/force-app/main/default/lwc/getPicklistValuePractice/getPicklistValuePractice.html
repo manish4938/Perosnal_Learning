@@ -1,0 +1,20 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-11-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get Industry Picklist Value Using GetpicklistValues">
+        <lightning-combobox
+        name="Industry"
+        label="Industry"
+        value={selectedIndustry}
+        placeholder="Select Your Industry"
+        options={industryOptions}
+        onchange={industryHandler}
+        ></lightning-combobox>
+        <p>Selected Industry:- {selectedIndustry}</p>
+    </lightning-card>
+</template>

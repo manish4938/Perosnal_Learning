@@ -1,0 +1,131 @@
+<template>
+<lightning-card style="margin-top: 5px;">
+<div class="button-bar lgc-bg">
+<lightning-button label="Activate" variant="brand" onclick={handleActivate}>Activate</lightning-button>
+<lightning-button-menu
+    label="Save As"
+    alternative-text="Save As"
+    icon-name="utility:down"
+    variant="brand">
+    <lightning-menu-item label="Option 1" value="option1"></lightning-menu-item>
+    <lightning-menu-item label="Option 2" value="option2"></lightning-menu-item>
+</lightning-button-menu>
+<lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+<lightning-button label="Deactivate" variant="brand" onclick={handleDeactivate}></lightning-button>
+</div>
+</lightning-card>
+
+<div class="content">
+    <!-- Prompt Template Workspace Section -->
+    <lightning-card style="width: 967px;">
+    <div class="workspace">
+        <h2 style ="font-weight: bold;font-size: 16px;margin-top: 25px;margin-bottom: 25px;">Prompt Template Workspace  
+            <lightning-icon icon-name="utility:info" size="xx-small" alternative-text="Info">
+            </lightning-icon>
+        </h2>
+        <div class="flex-container">
+            <span style="width: 359px;margin-left: 320px;margin-top: -108px;font-weight: bold; font-size: 10px;">Resources
+            <lightning-icon icon-name="utility:info" size="xx-small" alternative-text="Info"></lightning-icon>
+            </span>
+            </div>
+            <div class="flex-container" style="margin-left: 320px;margin-top: -63px;">
+            <lightning-input
+            style="width: 293px;"
+            type="search"
+            placeholder="Search for or select a resource to insert"
+            onchange={handleResourceChange}
+            icon-name="utility:search">
+            </lightning-input>
+        </div>
+        <div class="flex-container">
+            <span style="width: 359px;margin-left: 640px;margin-top: -80px;font-weight: bold; font-size: 10px;">Object Field
+            </span>
+        </div>
+        <div class="flex-container" style="margin-left: 640px;margin-top: -53px;">
+            <lightning-input
+            style="width: 293px;"
+            placeholder="Agentforce Order > Description"
+            type="text"
+            onchange={handleResourceChange}
+            icon-name="utility:search">
+            </lightning-input>
+        </div>
+        <lightning-textarea
+            placeholder="Enter your template here..."
+        ></lightning-textarea>
+        <div class="metadata">
+            <p>
+                Order Name: <a href="#">Input:Agentforce_Order__c.Name</a>
+            </p>
+            <p>
+                Order Status: <a href="#">Input:Agentforce_Order__c.Order_Status__c</a>
+            </p>
+        </div>
+    </div>
+    </lightning-card>
+    <!-- Configuration Section -->
+    <lightning-card style="width: 265px;">
+    <div class="configuration">
+        <h2 style ="font-weight: bold; font-size: 16px;">Configuration</h2>
+        <span class="asterisk">*</span>
+        <span>Model Type<lightning-icon icon-name="utility:info" size="xx-small" alternative-text="Info"></lightning-icon></span>
+		 <lightning-combobox
+            placeholder="Select a model type"
+            options={modelTypeOptions}>
+		 </lightning-combobox>
+         <span class="asterisk">*</span>
+         <span>Models<lightning-icon icon-name="utility:info" size="xx-small" alternative-text="Info"></lightning-icon></span>
+		 <lightning-combobox
+            placeholder="Select a model"
+            options={modelOptions}>
+		 </lightning-combobox>
+    </div>
+        </lightning-card>
+</div>
+
+<!-- Preview Section -->
+<div class="content">
+<lightning-card style="width: 967px;margin-top: 5px;">
+<div class="preview">
+    <h2 style="font-weight: bold; font-size: 16px; margin-bottom: -67px">Preview</h2>
+    <div class="row">
+            <div class="flex-container">
+            <span style="width: 36px;margin-left: 450px;margin-top: 41px;font-weight: bold; font-size: 10px;">Resolution
+            <lightning-icon icon-name="utility:info" size="xx-small" alternative-text="Info">
+            </lightning-icon></span>
+            <div style="margin-top: 21px;">
+            <div class="toggle-container">
+            <lightning-input
+            type="toggle"
+            onchange={handleToggle}
+            ></lightning-input>
+            </div>
+            </div>
+        </div>
+        <div style="margin-top: 14px;margin-left: 19px;">
+            <lightning-input
+                label="Related Record"
+                placeholder="Search Agentforce Orders"
+                type="text"
+                required>
+            </lightning-input>
+        </div>
+        <div style ="margin-left: 15px; margin-top: 38px;">
+            <lightning-button label="Save & Preview" onclick={handlePreview}></lightning-button>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div style="width: 425px;font-weight: bold; font-size: 12px; margin-left: 20px;margin-top: 10px;">
+          <lightning-textarea label="Resolution" placeholder="Enabled"></lightning-textarea>
+        </div>
+        <div style="width: 425px;font-weight: bold; font-size: 12px;margin-left: 113px;margin-top: 10px;">
+            <lightning-textarea label="Response"  placeholder="No response available yet. Preview will appear here after generation."></lightning-textarea>
+        </div>
+     </div>
+</div>
+</lightning-card>
+</div>
+<!-- -->
+
+</template>

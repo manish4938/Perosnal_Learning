@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Concatenate Input and Picklist">
+        <!-- Picklist Component -->
+        <lightning-combobox 
+            label="Select Option" 
+            value={selectedOption} 
+            placeholder="Choose an option"
+            options={options}
+            onchange={handlePicklistChange}>
+        </lightning-combobox>
+
+        <!-- Textarea Component -->
+        <lightning-textarea 
+            label="User Input" 
+            value={userInput}
+            placeholder="Enter your text here"
+            onchange={handleTextareaChange}>
+        </lightning-textarea>
+
+        <!-- Display Concatenated Result -->
+        <lightning-textarea 
+            label="Concatenated Result" 
+            value={concatenatedValue}
+            readonly>
+        </lightning-textarea>
+    </lightning-card>
+</template>

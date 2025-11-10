@@ -1,0 +1,8 @@
+<!-- submitCnrLauncher.html -->
+<template>
+    <lightning-button label="Submit CNR" onclick={handleClick}></lightning-button>
+
+    <template if:true={showModal}>
+        <c-submit-cnr-modal record-id={recordId} onclose={handleCloseModal}></c-submit-cnr-modal>
+    </template>
+</template>

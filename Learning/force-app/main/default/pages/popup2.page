@@ -1,0 +1,39 @@
+<apex:page controller="popup2">
+<apex:form >
+<apex:commandButton value="Show Pop up" action="{!showPopup}" rerender="popup2"/>
+<apex:outputPanel id="popup2">
+<apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopUp}" id="firstpopup" >
+firstpopup <br/>
+<apex:commandButton value="Hide Pop up" action="{!closePopup}" rerender="popup"/>
+<apex:commandButton value="show inner Pop up" action="{!showinnerpopup}" rerender="firstpopup"/>
+<apex:outputPanel styleClass="ccustomPopup" layout="block" rendered="{!displayinnerPopUp}" id="innerpopup">
+innerpopup <br/>
+<apex:commandButton value="Hide inner Pop up" action="{!closeinnerpopup}" rerender="firstpopup"/>
+</apex:outputPanel>
+</apex:outputPanel>
+</apex:outputPanel>
+</apex:form>
+<style type="text/css">
+.customPopup{
+background-color: lightgrey;
+border-style: solid;
+border-width: 1px;
+left: 65%;
+padding:10px;
+position: absolute;
+z-index: 999;
+
+width: 500px;
+margin-left: -250px;
+top:100px;
+.ccustomPopup{
+background-color: lightgrey;
+border-style: solid;
+border-width: 1px;
+left: 65%;
+padding:10px;
+position: absolute;
+width: 100px;
+margin-left: -250px;
+top:100px;}
+</style></apex:page>

@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-09-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Parent Comp">
+        <lightning-button variant='brand' label='Show Child' onclick={handleOnClick}>
+           
+        </lightning-button>  Message :- {msg}
+       <template if:true={isVisible}>  
+            <c-parent-comp2
+            onclose={handleChildEvent}></c-parent-comp2>
+        </template>
+       
+    </lightning-card>
+</template>

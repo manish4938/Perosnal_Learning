@@ -1,0 +1,11 @@
+:host {
+    /* Ensure host doesn't interfere with positioning */
+    display: block;
+}
+
+.modal-content {
+    /* Base styles, refined in JS */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}

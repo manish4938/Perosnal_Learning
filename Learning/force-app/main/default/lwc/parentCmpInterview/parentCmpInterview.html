@@ -1,0 +1,24 @@
+<template>
+<lightning-card>
+    <lightning-input onchange={inputChangeHandler} value={searchKey}></lightning-input>
+    <lightning-button label="Search" onclick={handleClick} variant='brand'></lightning-button>
+    <h1>Data From Parent</h1>
+    <template if:true={accounts}>
+        <template for:each={accounts} for:item="account">
+            <p key={account.Id}>
+                {account.Name}{account.Phone}{account.Email__c}
+            </p>
+        </template>
+    </template>
+    <h1>Data From Child :- {childata} </h1>
+<p>------</p>
+<template if:true={accounts}>
+<c-child-cmp-interview
+name={name}
+phone={phone}
+email={email}
+onsend={sendDataToParent}
+></c-child-cmp-interview>
+ </template>
+</lightning-card>
+</template>

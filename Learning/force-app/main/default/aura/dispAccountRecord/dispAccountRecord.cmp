@@ -1,0 +1,4 @@
+<aura:component controller="AccountController">
+    
+	
+</aura:component>

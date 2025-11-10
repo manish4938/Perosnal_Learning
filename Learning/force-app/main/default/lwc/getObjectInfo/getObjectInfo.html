@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-05-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get Object Info Adapter To Fetch Data From Single Object">
+        <div class="slds-p-around_medium">
+           <div>Default Record Type Id :- {defaultRecordTypeId}</div>
+        </div>
+    </lightning-card>
+
+
+    <lightning-card title="Get Object Info Adapter To Fetch Data From Multiple Object">
+        <div class="slds-p-around_medium">
+            <div>Test---------- {objectInfos}</div>
+            <template if:true={objectInfos}>
+                <div>Test---------- 2{objectInfos}</div>
+           <template for:each={objectInfos.result} for:item="obj">
+               <div key={obj.result.apiName}>
+                <div>Object Api Name - {obj.result.apiName}</div>
+                <div>defaultRecordTypeId - {obj.result.defaultRecordTypeId}</div>
+               </div>
+            </template>
+           </template>
+        </div>
+    </lightning-card>
+</template>

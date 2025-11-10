@@ -1,0 +1,20 @@
+<template>
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="modal-overlay">
+            <div class="modal-container">
+                <header class="modal-header">
+                    <h2 class="modal-title">Account Modal</h2>
+                    <button class="close-button" onclick={closeModal}>×</button>
+                </header>
+
+                <div class="modal-body">
+                    <p>This is the modal content. You can add any form or information here.</p>
+                </div>
+
+                <footer class="modal-footer">
+                    <lightning-button label="Close" onclick={closeModal}></lightning-button>
+                </footer>
+            </div>
+        </section>
+    </template>
+</template>

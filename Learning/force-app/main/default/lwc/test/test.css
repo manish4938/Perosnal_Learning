@@ -1,0 +1,100 @@
+.container {
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.header-buttons lightning-button,
+.header-buttons lightning-button-menu {
+    margin-left: 0.5rem;
+}
+
+.content {
+    display: flex;
+    gap:5px;
+    margin-top: 5px;
+}
+
+.workspace{
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+    flex: 1;
+    margin-top: 5px;
+}
+.configuration {
+    background: white;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+    flex: 1;
+    margin-top: 2px;
+    height: 235px;
+}
+
+.preview {
+    background: white;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+    margin-top: 5px;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.metadata p {
+    margin: 0.5rem 0;
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+textarea {
+    width: 100%;
+}
+
+.button-bar {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-end; /* Move the buttons to the right */
+    gap: 0.5rem; /* Add space between buttons */
+    margin: 1rem; /* Optional: Add some margin to the container */
+    margin-top: -18px;
+    margin-bottom: -4px;
+}
+.responsive-card {
+    width: 945px; /* The card takes up 80% of the parent container */
+}
+.flex-container {
+    display: flex;
+    align-items: center; /* Align vertically in the row */
+    gap: 10px; /* Optional spacing between spans */
+}
+.lgc-bg {
+    background: white;
+}
+/* Inside the component's CSS file */
+.toggle-container {
+    width: 50px; /* Set your desired width */
+    height: 25px; /* Set your desired height */
+    margin-top: 10px
+}
+.toggle-container .slds-checkbox_toggle {
+    transform: scale(0.5);
+    margin-top: 5px; /* Adjust alignment */
+}
+/*-------------------------------------------------------------------------*/
+/* CSS to style the asterisk */
+.asterisk {
+    color: red;
+    margin-left: 4px;
+}

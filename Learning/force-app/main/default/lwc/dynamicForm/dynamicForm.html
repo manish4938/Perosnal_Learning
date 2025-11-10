@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Dynamic LWC Form">
+        <div class="slds-p-around_medium">
+            <template if:false={showForm}>
+                <template if:false={isRecordPage}>
+                    <lightning-combobox
+                        label="Select Object"
+                        value={selectedObject}
+                        options={objectOptions}
+                        onchange={handleObjectChange}>
+                    </lightning-combobox>
+                </template>
+
+                <lightning-input
+                    label="How many fields do you want to create?"
+                    type="number"
+                    value={numFields}
+                    onchange={handleNumChange}>
+                </lightning-input>
+
+                <lightning-button label="Continue" class="slds-m-top_medium" onclick={handleContinue}></lightning-button>
+            </template>
+
+            <template if:true={showForm}>
+                <template for:each={fieldInputs} for:item="field" for:index="index">
+                    <div key={field.id} class="slds-box slds-m-bottom_small">
+                        <lightning-input
+                            label="Field Name"
+                            data-index={index}
+                            data-field="fieldName"
+                            value={field.fieldName}
+                            onchange={handleFieldInputChange}>
+                        </lightning-input>
+
+                        <lightning-combobox
+                            label="Data Type"
+                            data-index={index}
+                            data-field="dataType"
+                            value={field.dataType}
+                            options={dataTypeOptions}
+                            onchange={handleFieldInputChange}>
+                        </lightning-combobox>
+                    </div>
+                </template>
+
+                <lightning-button label="Back" onclick={handleBack} class="slds-m-right_small"></lightning-button>
+                <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+            </template>
+        </div>
+    </lightning-card>
+</template>

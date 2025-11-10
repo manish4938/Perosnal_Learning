@@ -1,0 +1,6 @@
+<apex:page >
+  <apex:panelBar >
+  <apex:panelbarItem label="Item-1" onenter="alert('Entering into Item 1');" onleave="alert('Leaving Item 1');">Speed Test Domain</apex:panelbarItem>
+  <apex:panelbarItem label="Item-2" onenter="alert('Entering into Item 2');" onleave="alert('Leaving Item 2');">https://www.speedtest.net/</apex:panelbarItem>
+  </apex:panelBar>
+</apex:page>

@@ -1,0 +1,22 @@
+<aura:component >
+	 <span class="tag">&lt;aura:component</span>&gt;
+    <span class="tag">&lt;aura:attribute</span><span class="attribute"> name=</span><span class="string">"contact"</span><span class="attribute"> type=</span><span class="string">"Contact"</span> /&gt;
+    
+        <span class="tag">&lt;lightning:card</span><span class="attribute"> variant=</span><span class="string">"Narrow"</span><span class="attribute"> title=</span><span class="string">"{!v.contact.Name}"</span> 
+                       <span class="attribute"> iconName=</span><span class="string">"standard:contact"</span>&gt;
+            <span class="tag">&lt;aura:set</span><span class="attribute"> attribute=</span><span class="string">"actions"</span>&gt;
+                <span class="tag">&lt;lightning:button</span><span class="attribute"> name=</span><span class="string">"details"</span><span class="attribute"> label=</span><span class="string">"Details"</span><span class="attribute"> onclick=</span><span class="string">"{!c.goToRecord}"</span> /&gt;
+            <span class="tag">&lt;/aura:set</span>&gt;    
+            <span class="tag">&lt;aura:set</span><span class="attribute"> attribute=</span><span class="string">"footer"</span>&gt;
+                <span class="tag">&lt;lightning:badge</span><span class="attribute"> label=</span><span class="string">"{!v.contact.Email}"</span>/&gt;
+            <span class="tag">&lt;/aura:set</span>&gt;
+            <span class="tag">&lt;p</span><span class="attribute"> class=</span><span class="string">"slds-p-horizontal_small"</span>&gt;
+                {!v.contact.Phone}
+            <span class="tag">&lt;/p</span>&gt;
+            <span class="tag">&lt;p</span><span class="attribute"> class=</span><span class="string">"slds-p-horizontal_small"</span>&gt;
+                {!v.contact.MailingStreet}
+            <span class="tag">&lt;/p</span>&gt;
+        <span class="tag">&lt;/lightning:card</span>&gt;
+
+<span class="tag">&lt;/aura:component</span>&gt; 
+</aura:component>

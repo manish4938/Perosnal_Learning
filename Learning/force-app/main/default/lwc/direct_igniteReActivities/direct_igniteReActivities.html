@@ -1,0 +1,44 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+      <thead>
+         <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+               <div class="slds-truncate" title="Capabilities">Capabilities</div>
+            </th>
+            <th class="" scope="col">
+               <div class="slds-truncate rightAllign" title="MTD Usage">MTD Usage</div>
+            </th>
+            <th class="" scope="col">
+               <div class="slds-truncate rightAllign" title="Previous Month Usage">Previous Month Usage</div>
+            </th>
+            
+         </tr>
+      </thead>
+      <tbody>
+         <template if:true = {igniteReData}>
+         <template for:each={igniteReData} for:item="igniteRe">
+         <tr key={igniteRe.capabilities} class="slds-hint-parent">
+             <td data-label="Capabilities">
+               <div class="slds-truncate" title="Property">{igniteRe.capabilities}</div>
+             </td>
+            <td data-label="MTD">
+               <div class="slds-truncate rightAllign" title="4/14/2015">
+                  <a>{igniteRe.mtdUsage}</a>
+               </div>
+            </td>
+            <td data-label="PMU">
+               <div class="slds-truncate rightAllign" title="Prospecting">
+                  <a>{igniteRe.prevMonth}</a>
+               </div>
+            </td>
+         </tr>
+      </template>
+      </template>
+      </tbody>
+   </table>
+   <!-- 
+   <c-direct_-ignitere-event-details
+   ignite-re-data = {igniteReData}>
+   </c-direct_-ignitere-event-details> -->
+   
+</template>

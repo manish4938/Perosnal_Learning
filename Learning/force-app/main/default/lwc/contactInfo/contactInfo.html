@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-15-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Fetching Contact Table Without Param">
+        <template if:true={contactList}>
+          <template for:each={contactList} for:item="conList">
+            <div class="slds-box slds-box_xx-small" key={conList.Id}>
+               <p><Strong>Name: </Strong> {conList.Name}</p>
+               <p><Strong>Account Id: </Strong> {conList.AccountId}</p>
+               <p><Strong>Phone : </Strong> {conList.newPhone}</p>
+             </div>
+          </template>
+        </template>
+    </lightning-card>
+
+
+    <lightning-card title="Fetching Contact Table Wit Param">
+       <lightning-input label="Enter Your Name"></lightning-input>
+    </lightning-card>
+</template>

@@ -1,0 +1,31 @@
+.custom-modal {
+    position: fixed !important;
+    top: 5vh !important;
+    left: 5vw !important;
+    width: 90vw !important;
+    height: 90vh !important;
+    margin: 0 !important;
+    z-index: 10001 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-modal-container {
+    background: white;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.custom-modal-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
